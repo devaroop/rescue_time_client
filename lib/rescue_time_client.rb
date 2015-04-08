@@ -20,8 +20,6 @@ module RescueTime
 
     def set_token(token)
       @token = Auth.constructToken(@oauth_client, token)
-
-      @token
     end
 
     def get_token_from_code(code)
@@ -29,18 +27,26 @@ module RescueTime
                                                  redirect_uri: @redirect_uri, 
                                                  headers: {'Authorization' => 'Basic some_password'}
                                                  )
-
-      @token
     end
 
-    def get_daily_summary_feed(params = {})
-      resp = @token.get('/api/oauth/daily_summary_feed', params)
-      Response.process(resp)
+
+    #sexy
+    def method_missing(method_sym, *arguments, &block)
+      if method_sym.to_s =~ /^fetch_(.*)$/
+        api_endpoint = "/api/oauth/#{$1}"
+        params = arguments[0] || {}
+        puts "Fetching #{api_endpoint} with params #{params}}"
+        resp = @token.get(api_endpoint, params.merge(default_params))
+        Response.process(resp)
+      else
+        super
+      end
     end
 
-    def get_data(params = {})
-      resp = @token.get('/api/oauth/data', params)
-      Response.process(resp)
+    private
+    
+    def default_params
+      {format: 'json'}
     end
 
   end
