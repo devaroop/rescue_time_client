@@ -1,6 +1,14 @@
 # rescue_time_client
 A ruby gem to ease integrate with RescueTime API using OAuth2
 
+##Installation
+
+Will publish the gem soon to rubygems, till then:
+
+Add this to your Gemfile:
+```ruby
+gem 'rescue_time_client', git: "https://github.com/devaroop/rescue_time_client.git"
+```
 
 ## Creating a client
 
