@@ -43,7 +43,7 @@ The gem makes dynamic calls to the API. Anything starting with ```fetch_``` is a
 cl.fetch_daily_summary_data({param1: "something", param2: "other"}) #calls the daily_summary_data endpoint with the params
 cl.fetch_productivity_data({param1: "something", param2: "other"}) #calls the productivity_data endpoint with the params
 ```
-Thats how you can call any API endpoint.
+Thats how you can call any API endpoint. All API's return data in **json** format. RescueTime supports no other format as of today except for *csv* which is beyond the scope of this gem. ```format: 'json'``` is automatically appended for every API request made.
 
 *Note-1: The _token_ should be set to make API calls.*
 
