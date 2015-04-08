@@ -23,6 +23,7 @@ Redirect user to the ```auth_url``` on the browser. After authenticating, Rescue
 token = cl.get_token_from_code('code_from_above')
 ```
 You may store the token for future purposes and continue making API calls.
+
 Note: Currently RescueTime tokens do not expire.
 
 
@@ -45,7 +46,9 @@ cl.fetch_productivity_data({param1: "something", param2: "other"}) #calls the pr
 Thats how you can call any API endpoint.
 
 *Note-1: The _token_ should be set to make API calls.*
+
 *Note-2: All endpoints should be prefixed with ```fetch_``` without which it will raise a NoMethodError*
+
 
 ##Contribution
 
