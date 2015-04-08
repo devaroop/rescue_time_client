@@ -10,4 +10,7 @@ Gem::Specification.new do |s|
   s.homepage    =
     'http://rubygems.org/gems/rescue_time_client'
   s.license       = 'MIT'
+
+
+  s.add_runtime_dependency 'oauth2'
 end
