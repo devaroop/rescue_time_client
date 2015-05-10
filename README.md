@@ -7,7 +7,7 @@ Will publish the gem soon to rubygems, till then:
 
 Add this to your Gemfile:
 ```ruby
-gem 'rescue_time_client', git: "https://github.com/devaroop/rescue_time_client.git"
+gem 'rescue_time_client'
 ```
 
 ## Creating a client
